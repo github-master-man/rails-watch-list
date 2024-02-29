@@ -1,0 +1,6 @@
+<!-- app/views/restaurants/new.html.erb -->
+<h1>Create a new list</h1>
+<%= simple_form_for (@list) do |f| %>
+  <%= f.input :name %>
+  <%= f.button :submit %>
+<% end %>

@@ -7,4 +7,19 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
+  # As a user, I can see all my movie lists
+
+  # HTTP Verb, to: "controller_name#action_name"
+  get "home", to: "pages#home"
+
+  get "about", to: "users#about "
+
+  # READ all lists - index
+
+    resources :lists do
+      resources :bookmarks, only: [:new, :create] # directs to Bookmarks#new
+    end
+
+    resources :bookmarks, only: [:destroy]
 end

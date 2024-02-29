@@ -1,0 +1,11 @@
+<h1 class="red">Create a new Bookmark</h1>
+
+<%# FORM TO CREATE A BOOKMA%>
+
+<%= simple_form_for [@list, @bookmark] do |f| %>
+  <%= f.association :movie, collection: Movie.all %>
+  <%= f.input :comment %>
+  <%= f.button :submit %>
+<% end %>
+
+<h2 class = "my-class"></h2>
