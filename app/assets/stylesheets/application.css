@@ -15,7 +15,7 @@
  */
 
  body {
-  background: green;
+  background: yellow;
  }
 
  .red {
@@ -25,3 +25,13 @@
  .my-class {
   color: blue;
 }
+
+h1 {
+  text-align: center;
+}
+
+li {
+  list-style: none;
+}
+
+

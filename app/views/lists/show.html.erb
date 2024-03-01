@@ -1,20 +1,33 @@
-<h1>Welcome to Mehul's Home page3"</h1>
-<ul>
-    <li><%= @list.name %></li>
-</ul>
+<%#
+<style>
+  .container {
+    text-align: center;
+  }
+</style> %>
+
+<div class="container text-centre">
+  <h1><%= @list.name %></h1>
 
 
-<p><strong>Bookmarks</strong></p>
-<%= link_to "Create a bookmark", new_list_bookmark_path(@list) %>
-<ul>
-  <% @list.bookmarks.each do |bookmark| %>
-    <li><%= bookmark.movie.title %> - <%= bookmark.comment %>
+  <p><strong>Bookmarks</strong></p>
+  <button type="button" class="btn btn-primary">
+    <%= link_to "Create a bookmark", new_list_bookmark_path(@list) %>
+  </div>
+  <ul>
+    <% @list.bookmarks.each do |bookmark| %>
+      <h2><%= bookmark.movie.title %></h2> - <%= bookmark.comment %>
 
-    <%= link_to "Delete",
-      bookmark_path(bookmark),
-      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-    %>
-  </li>
+      <li><%= bookmark.movie.overview %> - <%= bookmark.comment %>
 
-  <% end %>
-</ul>
+      <li><%= image_tag(bookmark.movie.poster_url, size: "200x300") %> - <%= bookmark.comment %>
+
+
+      <%= link_to "Delete",
+        bookmark_path(bookmark),
+        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+      %>
+    </li>
+
+    <% end %>
+  </ul>
+</div>
